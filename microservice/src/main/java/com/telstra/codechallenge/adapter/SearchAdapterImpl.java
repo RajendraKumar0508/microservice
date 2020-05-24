@@ -26,21 +26,19 @@ public class SearchAdapterImpl implements SerachAdapter {
 	private String seachUserBaseUrl;
 
 	@Override
-	public SearchApiResponse searchRepository(String q, String sort, String order) throws SearchException{
+	public SearchApiResponse searchRepository(String q, String sort, String order) throws SearchException {
 
 		SearchApiResponse searchApiResponse = new SearchApiResponse();
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Accept", "application/json");
-			UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(seachRepoistryBaseUrl)
-				.queryParam("q", q)
-				.queryParam("sort", sort)				
-				.queryParam("order", order);		
+		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(seachRepoistryBaseUrl).queryParam("q", q)
+				.queryParam("sort", sort).queryParam("order", order);
 		RestTemplate restTemplate = new RestTemplate();
 		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 		HttpEntity<String> entity = new HttpEntity<String>(headers);
-		ResponseEntity<SearchApiResponse> result = restTemplate.exchange(builder.buildAndExpand().toUri(), HttpMethod.GET, entity,
-				SearchApiResponse.class);
+		ResponseEntity<SearchApiResponse> result = restTemplate.exchange(builder.buildAndExpand().toUri(),
+				HttpMethod.GET, entity, SearchApiResponse.class);
 		if (result.getStatusCode().equals(HttpStatus.OK)) {
 			searchApiResponse = result.getBody();
 		}
@@ -49,7 +47,7 @@ public class SearchAdapterImpl implements SerachAdapter {
 	}
 
 	@Override
-	public SearchApiResponse searchUser(String q, String sort, String order) throws SearchException{
+	public SearchApiResponse searchUser(String q, String sort, String order) throws SearchException {
 
 		SearchApiResponse searchResponse = new SearchApiResponse();
 
@@ -60,8 +58,8 @@ public class SearchAdapterImpl implements SerachAdapter {
 		RestTemplate restTemplate = new RestTemplate();
 		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 		HttpEntity<String> entity = new HttpEntity<String>(headers);
-		ResponseEntity<SearchApiResponse> result = restTemplate.exchange(builder.buildAndExpand().toUri(), HttpMethod.GET, entity,
-				SearchApiResponse.class);
+		ResponseEntity<SearchApiResponse> result = restTemplate.exchange(builder.buildAndExpand().toUri(),
+				HttpMethod.GET, entity, SearchApiResponse.class);
 		if (result.getStatusCode().equals(HttpStatus.OK)) {
 			searchResponse = result.getBody();
 		}

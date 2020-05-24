@@ -2,19 +2,31 @@ package com.telstra.codechallenge.helloworld;
 
 
 public class HelloWorld {
-  private final long id;
-  private final String content;
+   
 
-  public HelloWorld(long id, String content) {
-    this.id = id;
-    this.content = content;
-  }
+  private long id;
+  private String name;
+public long getId() {
+	return id;
+}
+public void setId(long id) {
+	this.id = id;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public HelloWorld(long l, String name) {
+	super();
+	this.id = l;
+	this.name = name;
+}
+ 
+  
+  
 
-  public long getId() {
-    return id;
-  }
 
-  public String getContent() {
-    return content;
-  }
+  
 }

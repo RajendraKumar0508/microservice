@@ -29,7 +29,7 @@ public class SearchController {
 	public ResponseEntity<List<RepositoryResponse>> searchRepository(
 			@RequestParam(value = "q", required = false) String q,
 			@RequestParam(value = "sort", required = false) String sort,
-			@RequestParam(value = "order", required = false) String order, HttpServletRequest request)
+			@RequestParam(value = "order", required = false) String order)
 			throws SearchException {
 		List<RepositoryResponse> repositoryResponseList = null;
 		if (q != null) {
@@ -47,7 +47,7 @@ public class SearchController {
 	@RequestMapping(path = "search/users", method = RequestMethod.GET)
 	public ResponseEntity<List<UserResponse>> searchUser(@RequestParam(value = "q", required = false) String q,
 			@RequestParam(value = "sort", required = false) String sort,
-			@RequestParam(value = "order", required = false) String order, HttpServletRequest request)
+			@RequestParam(value = "order", required = false) String order)
 			throws SearchException {
 		List<UserResponse> userResponseList = null;
 		if (q != null) {

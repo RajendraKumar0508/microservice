@@ -5,24 +5,26 @@ public class HelloWorld {
    
 
   private long id;
-  private String name;
+  private String content;
 public long getId() {
 	return id;
 }
 public void setId(long id) {
 	this.id = id;
 }
-public String getName() {
-	return name;
+public String getContent() {
+	return content;
 }
-public void setName(String name) {
-	this.name = name;
+public void setContent(String content) {
+	this.content = content;
 }
-public HelloWorld(long l, String name) {
+public HelloWorld(long id, String content) {
 	super();
-	this.id = l;
-	this.name = name;
+	this.id = id;
+	this.content = content;
 }
+
+
  
   
   

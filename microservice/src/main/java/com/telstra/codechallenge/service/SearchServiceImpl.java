@@ -3,6 +3,7 @@ package com.telstra.codechallenge.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.telstra.codechallenge.Exception.SearchException;
@@ -22,6 +23,7 @@ public class SearchServiceImpl implements SearchService {
 	SearchResponseProcessor searchResponseProcessor;
 
 	@Override
+	@Cacheable(value="RepositoryResponse")
 	public List<RepositoryResponse> searchRepository(String q, String sort, String order) throws SearchException {
 
 		SearchApiResponse searchApiResponse = this.serachAdapter.searchRepository(q, sort, order);
@@ -33,6 +35,7 @@ public class SearchServiceImpl implements SearchService {
 	}
 
 	@Override
+	@Cacheable(value="UserResponse" )
 	public List<UserResponse> searchUser(String q, String sort, String order) throws SearchException {
 
 		SearchApiResponse searchApiResponse = this.serachAdapter.searchUser(q, sort, order);

@@ -88,7 +88,6 @@ public class SearchControllerTest {
 		Mockito.when(searchAdapterImpl.searchUser(q, sort, order)).thenReturn(searchApiResponse);
 		Mockito.when(searchServiceImpl.searchUser(q, sort, order)).thenReturn(userrespList);
 		ResponseEntity<List<RepositoryResponse>> res = searchController.searchRepository(q, sort, order);
-
 		Assert.assertNotNull(res);
 
 	}

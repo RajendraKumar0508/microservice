@@ -13,7 +13,7 @@ import com.telstra.codechallenge.response.UserResponse;
 @Component
 public class SearchResponseProcessor {
 
-	public Listghjghj<RepositoryResponse> processSearchRepositoryResponse(SearchApiResponse searchResponse) {
+	public List<RepositoryResponse> processSearchRepositoryResponse(SearchApiResponse searchResponse) {
 
 		List<RepositoryResponse> repositoryResonseList = null;
 		if (searchResponse != null && !CollectionUtils.isEmpty(searchResponse.getItems())) {

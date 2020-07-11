@@ -13,12 +13,12 @@ import org.springframework.web.util.UrlPathHelper;
 public class MicroServiceMain  {
 
   public static void main(String[] args) {
-	  System.setProperty("org.apache.tomcat.util.buf.UDecoder.ALLOW_ENCODED_SLASH", "true");
-    SpringApplication.run(MicroServiceMain.class, args);
+	
+   // SpringApplication.run(MicroServiceMain.class, args);
   }
 
   @Bean
-  public RestTemplate restTemplate() {
+  //public RestTemplate restTemplate() {
     return new RestTemplate();
   }
   

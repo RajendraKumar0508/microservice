@@ -10,7 +10,7 @@ function fn() {
 
   var microservicePort = karate.properties["microservice.port"];
   if (!microservicePort) {
-    microservicePort = "8080";
+    microservicePort = "8085";
   }
 
   config = {};
